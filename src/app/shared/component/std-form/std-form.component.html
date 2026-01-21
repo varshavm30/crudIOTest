@@ -1,0 +1,76 @@
+
+<div class="card">
+    <div class="card-body">
+         <form #stdForm="ngForm" (ngSubmit)="onstdAdd()">
+           <div class="form-group">
+             <label for="fname">First Name</label>
+             <input 
+             required
+             ngModel
+             name="fname"
+             #fname="ngModel"
+             type="text" class="form-control">
+             <strong 
+             class="text-danger"
+             *ngIf="fname.touched && fname.hasError('required')">
+                student name is a required field
+             </strong>
+            </div>
+
+              <div class="form-group">
+             <label for="lname">Last Name</label>
+             <input 
+             required
+             ngModel
+             name="lname"
+             #lname="ngModel"
+             type="text" class="form-control">
+             <strong 
+             class="text-danger"
+             *ngIf="lname.touched && lname.hasError('required')">
+                last name is a required field
+             </strong>
+            </div>
+
+              <div class="form-group">
+             <label for="email">Email</label>
+             <input 
+             required
+             ngModel
+             name="email"
+             #email="ngModel"
+             type="text" class="form-control">
+             <strong 
+             class="text-danger"
+             *ngIf="email.touched && email.hasError('required')">
+                email is a required field
+             </strong>
+            </div>
+
+              <div class="form-group">
+             <label for="contact">Contact</label>
+             <input 
+             required
+             ngModel
+             name="contact"
+             #contact="ngModel"
+             type="text" class="form-control">
+             <strong 
+             class="text-danger"
+             *ngIf="contact.touched && contact.hasError('required')">
+                student name is a required field
+             </strong>
+            </div>
+
+            <button 
+            class="btn-block"
+            *ngIf="!isInEditMode"
+             mat-raised-button color="primary">Add Student</button>
+            <button
+              (click)=" onStdUpdate()"
+            class="btn-block"
+             *ngIf="isInEditMode"
+              mat-raised-button color="primary" type="button">Update Student</button>
+        </form>
+    </div>
+</div>

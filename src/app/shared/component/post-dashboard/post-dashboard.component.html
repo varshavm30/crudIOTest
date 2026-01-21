@@ -1,0 +1,16 @@
+<h2 class="bg-success p-1 text-center">POST CARD</h2>
+<div class="row mb-4">
+ <div class="col-md-3 mb-4 ">
+    <app-post-form
+    (emitNewPost)="getNewPost($event)"
+    [editObj]="getEditObj"
+    (emitUpdatedPost)="getUpdatePost($event)"></app-post-form>
+ </div>
+ <div class="col-md-9">
+    <app-post-card [postObj]="postArr"
+    (emitRemovePost)="getRemovePost($event)"
+    (emitEditPost)="getEditPost($event)"></app-post-card>
+ </div>
+</div>
+<hr>
+<hr>

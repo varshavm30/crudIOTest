@@ -1,0 +1,16 @@
+<h2 class="bg-warning p-1 text-center">STUDENT TABLE</h2>
+<div class="row mb-4">
+    <div class="col-md-4 mb-4">
+      <app-std-form (emitNewStd)="getNewStd($event)"
+      [getEditstd]="editStd"
+      (emitUpdatedObj)="getUpdatedStd($event)"
+      ></app-std-form>
+    </div>
+    <div class="col-md-8">
+      <app-std-table
+      [stdObj]="stdArr"
+      (emitStdRemove)="getRemoveId($event)"
+      (emitStdEdit)="getEditstd($event)"></app-std-table>
+    </div>
+</div>
+<hr>

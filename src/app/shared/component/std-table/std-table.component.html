@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Full name</th>
+            <th>email</th>
+            <th> contact</th>
+            <th >Edit</th>
+            <th >Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let std of stdObj;trackBy:trackById">
+            <td>{{std.fname}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.contact}}</td>
+            <td>
+            <button (click)="onEditStd(std)"
+             mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+            </td>
+            <td>
+            <button (click)="onRemoveStd(std)"
+             mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
